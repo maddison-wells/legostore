@@ -42,6 +42,8 @@ const SearchResults = ({ searchTerm }) => {
               price={set.price}
               inStock={set.inStock}
               isRare={set.rare}
+              setID={set.setID}
+              stock={set.stock}
             />
           ))}
       </article>

@@ -10,6 +10,14 @@
   position: relative;
   border-radius: 10px;
 
+  @media (max-width: 1060px) {
+    width: 30%;
+  }
+
+  @media (max-width: 739px) {
+    width: 80%;
+  }
+
   &__btn {
     background-color: #ff0100;
     color: white;
@@ -29,6 +37,10 @@
     right: 5px;
 
     color: white;
+
+    @media (max-width: 739px) {
+      font-size: 30px;
+    }
   }
 
   &__banner {
@@ -38,6 +50,10 @@
     right: 5px;
 
     color: white;
+
+    @media (max-width: 739px) {
+      font-size: 30px;
+    }
   }
 
   &__bannerRed {
@@ -47,6 +63,10 @@
     right: 5px;
 
     color: white;
+
+    @media (max-width: 739px) {
+      font-size: 30px;
+    }
   }
 
   &__btn:disabled {

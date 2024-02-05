@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
-import AddCartBtn from "../AddCartBtn/AddCartBtn";
 import { getAllLegoSets } from "../../../services/lego";
 import styles from "./Carousel.module.scss";
+import { addItemToCart } from "../../Data/cart";
+import { NavLink } from "react-router-dom";
 
 const Carousel = () => {
   const [index, setIndex] = useState(0);
@@ -53,6 +54,7 @@ const Carousel = () => {
 
               <p className={styles.carousel__title}>{set.name}</p>
               <p>Price: ${set.price}</p>
+              <NavLink to="/shop">Shop Now!</NavLink>
               <button className={styles.carousel__btnLeft} onClick={handlePrev}>
                 <FontAwesomeIcon icon={faArrowLeft} />
               </button>

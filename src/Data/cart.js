@@ -26,7 +26,14 @@ export const getAllCartItems = async () => {
   return data;
 };
 
-export const addItemToCart = async ({ setID, name, img, price, stock }) => {
+export const addItemToCart = async ({
+  setID,
+  name,
+  img,
+  price,
+  stock,
+  qty,
+}) => {
   try {
     if (!setID || !name || !img || !price || stock === undefined) {
       const missingFields = [];
@@ -34,6 +41,7 @@ export const addItemToCart = async ({ setID, name, img, price, stock }) => {
       if (!name) missingFields.push("name");
       if (!img) missingFields.push("img");
       if (!price) missingFields.push("price");
+      if (!qty) missingFields.push("qty");
       if (stock === undefined) missingFields.push("stock");
 
       console.error(
@@ -67,15 +75,15 @@ export const removeItemFromCart = async (name) => {
   console.log(`Cart item with ID ${name} removed from cart.`);
 };
 
-export const adjustQty = async (cartItemId, stock, oldQty, newQty, price) => {
-  console.log(cartItemId, stock + (oldQty - newQty), oldQty, newQty);
-  const docRef = doc(db, "cart", cartItemId);
+// export const adjustQty = async (name, stock, oldQty, newQty, price) => {
+//   console.log(name, stock + (oldQty - newQty), oldQty, newQty);
+//   const docRef = doc(db, "cart", name);
 
-  await updateDoc(docRef, {
-    inStockQty: stock + (oldQty - newQty),
-    qty: newQty,
-    totalPrice: newQty * price,
-  });
+//   await updateDoc(docRef, {
+//     stock: stock + (oldQty - newQty),
+//     qty: newQty,
+//     totalPrice: newQty * price,
+//   });
 
-  console.log(`Adjusted quantity of cart item ${cartItemId}.`);
-};
+//   console.log(`Adjusted quantity of cart item ${name}.`);
+// };

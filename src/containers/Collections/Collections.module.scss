@@ -3,6 +3,10 @@
   flex-wrap: wrap;
   justify-content: space-around;
 
+  @media (max-width: 739px) {
+    flex-direction: column;
+  }
+
   &__heading {
     display: block;
   }

@@ -3,9 +3,15 @@
   align-items: center;
   border-bottom: 1px solid grey;
   margin: 30px;
-  display: flex;
   justify-content: space-around;
-  align-items: center;
+
+  @media (max-width: 701px) {
+    flex-wrap: wrap;
+    text-align: center;
+    gap: 10px;
+    padding-bottom: 10px;
+    flex-direction: column;
+  }
 
   &__item {
     margin-right: 20px;
@@ -13,10 +19,17 @@
 
   &__title {
     max-width: 200px;
+
+    @media (max-width: 701px) {
+      max-width: none;
+    }
   }
 
   &__img {
     width: 100px;
+    @media (max-width: 701px) {
+      width: 200px;
+    }
   }
 
   &__price {

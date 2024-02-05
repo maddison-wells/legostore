@@ -17,4 +17,5 @@ This project is a web application for exploring and purchasing LEGO sets. It pro
 - SCSS
 - JavaScript (ES6+)
 - FontAwesome for icons
+- Google Fonts
 - Firestore

@@ -5,16 +5,27 @@
   background-color: #ffcf00;
   position: relative;
 
+  @media (max-width: 750px) {
+    height: 200px;
+  }
+
   &__left {
     display: flex;
     align-items: center;
     gap: 10px;
     font-weight: bold;
+    @media (max-width: 750px) {
+      flex-direction: column;
+      margin-left: 30px;
+    }
   }
 
   &__img {
     width: 80px;
     margin: 20px;
+    @media (max-width: 750px) {
+      width: 60px;
+    }
   }
 
   &__right {
@@ -25,6 +36,11 @@
     display: flex;
     align-items: center;
     gap: 20px;
+
+    @media (max-width: 750px) {
+      // top: 60%;
+      position: none;
+    }
   }
 
   &__searchbar {
@@ -60,6 +76,11 @@
     border: 1px solid #ccc;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 1;
+
+    @media (max-width: 750px) {
+      top: 190px;
+      left: 40px;
+    }
   }
 
   &__linkActive {
@@ -75,4 +96,18 @@
     text-decoration: none;
     color: black;
   }
+}
+
+.cartCount {
+  border-radius: 50%;
+  height: 20px;
+  padding: 10px;
+  background-color: red;
+  color: white;
+  text-align: center;
+  line-height: 20px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
 }

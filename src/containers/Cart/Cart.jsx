@@ -22,33 +22,16 @@ const Cart = () => {
 
     fetchData();
   }, []);
-  // useEffect(() => {
-  //   const newTotal = cart.reduce(
-  //     (acc, item) => acc + parseFloat(item.price) * item.quantity,
-  //     0
-  //   );
-  //   setTotal(newTotal);
-  // }, [cart]);
 
-  // const handleUpdateQuantity = (index, newQuantity) => {
-  //   const updatedCart = [...cart];
-  //   updatedCart[index].quantity = parseInt(newQuantity, 10);
-  //   setCart(updatedCart);
-  // };
-
-  // const handleRemoveItem = (index, itemTotal) => {
-  //   const updatedCart = [...cart];
-  //   updatedCart.splice(index, 1);
-  //   setCart(updatedCart);
-
-  //   setTotal((prevTotal) => prevTotal - parseFloat(itemTotal));
-  // };
+  useEffect(() => {
+    const newTotal = cart.reduce((acc, item) => acc + item.price, 0);
+    setTotal(newTotal);
+  }, [cart]);
 
   return (
     <article>
       <h2 className={styles.cart__title}>{cart.length} ITEMS IN YOUR CART</h2>
       {cart.map((item, index) => (
-        //what is in cart database
         <CartItem
           key={index}
           item={item}

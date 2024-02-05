@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import logo from "../../img/lego-logo.webp";
 import styles from "./Navbar.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,10 +11,14 @@ import {
 import { NavLink } from "react-router-dom";
 import Dropdown from "../Dropdown/Dropdown";
 import { Searchbar } from "../Searchbar/Searchbar";
+import { CartContext } from "../../Context/CartContext";
 
 const Navbar = ({ setCollection, setSearchTerm, setLinkClicked }) => {
   const [isDropdownVisible, setDropdownVisible] = useState(false);
   const [isSearchVisible, setSearchVisible] = useState(false);
+  const [showCartCount, setShowCartCount] = useState(false);
+
+  const { cart, setCart } = useContext(CartContext);
 
   const linkStyles = ({ isActive }) => {
     return isActive
@@ -33,7 +37,9 @@ const Navbar = ({ setCollection, setSearchTerm, setLinkClicked }) => {
   const toggleSearch = () => {
     setSearchVisible(!isSearchVisible);
   };
-
+  useEffect(() => {
+    setShowCartCount(cart.length > 0);
+  }, [cart.length]);
   return (
     <>
       <nav className={styles.nav}>
@@ -78,6 +84,9 @@ const Navbar = ({ setCollection, setSearchTerm, setLinkClicked }) => {
           <FontAwesomeIcon className={styles.nav__icon} icon={faHeart} />
           <NavLink to="cart" className={styles.nav__icon}>
             <FontAwesomeIcon icon={faShoppingCart} />
+            {showCartCount && (
+              <span className={styles.cartCount}>{cart.length}</span>
+            )}
           </NavLink>
         </div>
       </nav>

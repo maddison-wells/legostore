@@ -1,14 +1,14 @@
 import React from "react";
 import styles from "./AddCartBtn.module.scss";
 
-const AddCartBtn = ({ inStock, handleClick }) => {
+const AddCartBtn = ({ stock, handleClick }) => {
   return (
     <button
       className={styles.btn}
-      onClick={inStock ? handleClick : null}
-      disabled={!inStock}
+      onClick={stock > 0 ? handleClick : null}
+      disabled={stock === 0}
     >
-      {inStock ? "Add to Cart" : "Out of Stock"}
+      {stock > 0 ? "Add to Cart" : "Out of Stock"}
     </button>
   );
 };

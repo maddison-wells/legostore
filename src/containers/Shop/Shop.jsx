@@ -31,6 +31,8 @@ const Shop = () => {
             price={set.price}
             inStock={set.inStock}
             isRare={set.rare}
+            stock={set.stock}
+            setID={set.setID}
           />
         ))}
       </article>
