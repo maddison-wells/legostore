@@ -1,0 +1,11 @@
+.cart {
+  &__title {
+    margin: 30px;
+  }
+
+  &__summary {
+    margin: 30px;
+    display: flex;
+    justify-content: space-between;
+  }
+}

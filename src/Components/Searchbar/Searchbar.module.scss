@@ -1,0 +1,14 @@
+.form {
+  &__search {
+    border-radius: 20px;
+    border: none;
+    padding: 5px;
+  }
+
+  &__button {
+    all: unset;
+    font-size: 25px;
+    margin-right: 10px;
+    align-items: center;
+  }
+}

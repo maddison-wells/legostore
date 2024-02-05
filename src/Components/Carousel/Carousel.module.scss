@@ -1,0 +1,77 @@
+.carousel {
+  margin: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+
+  &__img {
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__card {
+    width: 600px;
+    display: flex;
+    padding: 30px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  &__title {
+    font-weight: bold;
+    margin: 10px;
+  }
+
+  &__btnRight {
+    all: unset;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 3px;
+    cursor: pointer;
+    color: grey;
+  }
+
+  &__btnLeft {
+    all: unset;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    padding: 3px;
+    cursor: pointer;
+    color: grey;
+  }
+
+  &__heading {
+    font-size: 95px;
+    background: linear-gradient(
+      90deg,
+      violet,
+      indigo,
+      blue,
+      green,
+      orange,
+      red
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  &__btn {
+    background-color: #ff0100;
+    color: white;
+    padding: 20px;
+    width: 400px;
+    border: none;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+}

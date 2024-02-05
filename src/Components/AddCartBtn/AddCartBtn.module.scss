@@ -1,0 +1,14 @@
+.btn {
+  background-color: #ff0100;
+  color: white;
+  padding: 20px;
+  width: 90%;
+  border: none;
+  font-weight: bold;
+  margin-top: 10px;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}

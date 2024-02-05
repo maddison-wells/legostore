@@ -1,0 +1,9 @@
+.collections {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  &__heading {
+    display: block;
+  }
+}

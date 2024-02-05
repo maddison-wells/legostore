@@ -1,0 +1,37 @@
+.dropdown ul {
+  list-style: none;
+  padding: 20px;
+  margin: 0;
+}
+
+.dropdown li:hover {
+  padding: 20px;
+  color: grey;
+}
+
+.dropdown {
+  &__linkActive {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: black;
+  }
+  &__link:visited {
+    text-decoration: none;
+    color: black;
+  }
+
+  li {
+    padding: 20px;
+    text-decoration: none;
+    color: black;
+
+    &:hover {
+      padding: 20px;
+      color: grey;
+    }
+  }
+}

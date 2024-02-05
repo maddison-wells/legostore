@@ -1,0 +1,61 @@
+.card {
+  width: calc(25% - 40px);
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  margin: 20px;
+  position: relative;
+  border-radius: 10px;
+
+  &__btn {
+    background-color: #ff0100;
+    color: white;
+    padding: 20px;
+    width: 90%;
+    border: none;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  &__img {
+    width: 80%;
+  }
+  &__rareBanner {
+    background-color: orange;
+    padding: 5px;
+    position: absolute;
+    right: 5px;
+
+    color: white;
+  }
+
+  &__banner {
+    background-color: green;
+    padding: 5px;
+    position: absolute;
+    right: 5px;
+
+    color: white;
+  }
+
+  &__bannerRed {
+    background-color: red;
+    padding: 5px;
+    position: absolute;
+    right: 5px;
+
+    color: white;
+  }
+
+  &__btn:disabled {
+    opacity: 0.6;
+    background-color: grey;
+    cursor: not-allowed;
+  }
+
+  &__name {
+    text-align: center;
+  }
+}
